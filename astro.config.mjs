@@ -3,6 +3,7 @@ import svelte, { vitePreprocess } from "@astrojs/svelte";
 import tailwindcss from "@tailwindcss/vite";
 import { pluginCollapsibleSections } from "@expressive-code/plugin-collapsible-sections";
 import { pluginLineNumbers } from "@expressive-code/plugin-line-numbers";
+import edgeoneAdapter from "@edgeone/astro";
 import swup from "@swup/astro";
 import { defineConfig } from "astro/config";
 import expressiveCode from "astro-expressive-code";
@@ -36,6 +37,7 @@ export default defineConfig({
 	trailingSlash: "always",
 
 	output: "static",
+	adapter: edgeoneAdapter(),
 
 	integrations: [
 		umami({
@@ -198,3 +200,4 @@ export default defineConfig({
 		},
 	},
 });
+
